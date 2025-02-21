@@ -3,21 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="Home.css">
+    <title>BTG Properties Navbar</title>
+    <style>
+   
+    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <nav class="First-nav">
-            <img src="Images/LOGO.jpg" alt="">
-        </nav>
-        <nav class="Second-nav">
+<body onload="slider()">
 
-        </nav>
-        <div class="Hero-section">
 
+<header>
+    <div class="header">
+        <div class="logo">
+            <img src="Images/Property360Logo BIG.png"BTG Properties Logo">
         </div>
-    </header>
+        <div class="contact-info">
+            <p>+8801912-825969</p>
+            <p>+880122-711161</p>
+            <p>btsproperty360@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <!-- <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Ongoing Project</a>
+                <dev class="togglemenu">
+                    <ul>
+                        <li><a href="#">Mohammadpur</a></li>
+                        <li><a href="#">Demra</a></li>
+                        <li><a href="#">Mirpur </a></li>
+                        <li><a href="#">Boshundhora R/A</a></li>
+                    </ul>
+                </dev>
+            </li>
+            <li><a href="#">Upcoming Project</a></li>
+            <li><a href="#">Complete Project</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul> -->
+
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Ongoing Project</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Mohammadpur</a></li>
+                    <li><a href="#">Demra</a></li>
+                    <li><a href="#">Mirpur</a></li>
+                    <li><a href="#">Boshundhora R/A</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Upcoming Project</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Mohammadpur</a></li>
+                    <li><a href="#">Demra</a></li>
+                    <li><a href="#">Mirpur</a></li>
+                    <li><a href="#">Boshundhora R/A</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Complete Project</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Mohammadpur</a></li>
+                    <li><a href="#">Demra</a></li>
+                    <li><a href="#">Mirpur</a></li>
+                    <li><a href="#">Boshundhora R/A</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Contect Us</a>
+                <!-- <ul class="dropdown-menu">
+                    <li><a href="#">Mohammadpur</a></li>
+                    <li><a href="#">Demra</a></li>
+                    <li><a href="#">Mirpur</a></li>
+                    <li><a href="#">Boshundhora R/A</a></li>
+                </ul> -->
+            </li>
+            <li class="dropdown">
+                <a href="#">About Us</a>
+
+            </li>
+            <!-- <li><a href="#">Upcoming Project</a></li>
+            <li><a href="#">Complete Project</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li> -->
+        </ul>
+
+    </div>
+</header>
+<div class="banner" >
+<!-- <div class="herocontainner" class="slider">
+    
+    <img class="hero-img" src="Images/building1.png" id="slideImg">
+</div>
+ -->
+ <div class="hero">
+    <img id="slideImg" src="Images/building1.png" alt="Slideshow Image">
+    <div class="hero-text">
+        Building Your Dreams, One Property at a Time. <br>
+        Welcome to Property360
+    </div>
+</div>
+
+<div id="overlay">
+
+</div>
+
+
+</div>
+
+
+<script>
+//     var slideImg = document.getElementById("slideImg");
+//     var images = new Array (
+//         "Images/building1.png",
+//         "Images/building2.png",
+//         "Images/building3.png",
+//         "Images/building4.png"
+        
+//  ) ;
+
+
+// var len = images.length;
+// var i=0;
+// function slider(){
+//     if(i>len-1){
+//         i=0;
+//     }
+
+//     slideImg.src = images[i];
+//     i++;
+//     setTimeout('slider()',7000);
+// }
+
+        var slideImg = document.getElementById("slideImg");
+        var images = [
+            "Images/building1.png",
+            "Images/building2.png",
+            "Images/building3.png",
+            "Images/building4.png"
+        ];
+
+        var len = images.length;
+        var i = 0;
+
+        function slider() {
+            slideImg.style.opacity = 0; // Start fade-out
+
+            setTimeout(() => {
+                slideImg.src = images[i];
+                slideImg.style.opacity = 1; // Fade-in effect
+                i = (i + 1) % len; // Loop images
+            }, 500); // Delay to match fade-out time
+
+            setTimeout(slider, 7000); // Call function every 7 seconds
+        }
+    
+</script>
+
+
+
+
+
+
+
+
+
+<main>
+    <section>
+        <h1>All you need to know about <br> Property360</h1>
+       <!-- Statistic Boxes Container -->
+       <div class="stats-container">
+        <div class="stat-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/8065/8065740.png" alt="Building">
+            <div class="stat-title">Since</div>
+            <div class="stat-value">1950</div>
+        </div>
+
+        <div class="stat-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/2907/2907769.png" alt="Units">
+            <div class="stat-title">Units</div>
+            <div class="stat-value">31</div>
+        </div>
+
+        <div class="stat-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/992/992701.png" alt="Employees">
+            <div class="stat-title">Employees</div>
+            <div class="stat-value">35053</div>
+        </div>
+
+        <div class="stat-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/2278/2278051.png" alt="Achievements">
+            <div class="stat-title"> Achievements</div>
+            <div class="stat-value">25</div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="galary">
+<div class="grid-gallery">
+    <div>
+        <img src="Images/building2.png" alt="">
+    </div>
+</div>
+</section>
+
+
+
+
+</main>
+
+
+
+<!-- 
+<footer class="footer">
+
+</footer> -->
+
+
 </body>
 
 </html>
