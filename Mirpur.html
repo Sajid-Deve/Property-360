@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+              * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: white;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .contact {
+            text-align: right;
+            color: black;
+        }
+        .nav {
+            background: black;
+            padding: 10px;
+        }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: right;
+            position: relative;
+        }
+        .nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        .nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: block;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+        }
+        .dropdown a {
+            color: black;
+            padding: 10px;
+            display: block;
+        }
+        .nav ul li:hover .dropdown, .nav ul li:focus-within .dropdown {
+            display: block;
+        }
+        .menu-toggle {
+            display: none;
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                display: none;
+                text-align: center;
+            }
+            .nav ul.show {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .dropdown {
+                position: static;
+            }
+        }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+        .hero .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .hero .slide.active {
+            opacity: 1;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        /* Ensure the nav bar and dropdown are above the hero section */
+.nav {
+    position: relative;
+    z-index: 1000; /* Higher than hero section */
+}
+
+.nav ul li {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1001; /* Higher than hero section */
+    color: white;
+}
+
+.dropdown a {
+    color: black;
+    padding: 10px;
+    display: block;
+}
+
+.nav ul li:hover .dropdown,
+.nav ul li:focus-within .dropdown {
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="Images/Property360Logo BIG.png" alt="Logo" height="40">
+        </div>
+        <div class="contact">
+            <p>+8801912-825969</p>
+            <p>+8801622-711161</p>
+            <p>btsproperty360@gmail.com</p>
+        </div>
+    </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li>
+                <a href="#">Ongoing Project</a>
+                <div class="dropdown">
+                    
+                    <a href="Mohammadpur.html">Mohammadpur </a>
+                    <a href="demra.html">Demra </a>
+                    <a href="boshundhora.html">Bashundhara  </a>
+                    <a href="Mirpur.html">Mirpur  </a>
+                    
+                </div>
+            </li>
+            <li>
+                <a href="#">Upcoming Project</a>
+                <div class="dropdown">
+                    <a href="Mohammadpur.html">Mohammadpur </a>
+                    <a href="demra.html">Demra </a>
+                    <a href="boshundhora.html">Bashundhara  </a>
+                    <a href="Mirpur.html">Mirpur  </a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Complete Project</a>
+                <div class="dropdown">
+                    <a href="Mohammadpur.html">Mohammadpur </a>
+                    <a href="demra.html">Demra </a>
+                    <a href="boshundhora.html">Bashundhara  </a>
+                    <a href="Mirpur.html">Mirpur  </a>
+                </div>
+            </li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

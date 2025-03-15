@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "Property360",
+			"path": "."
+		},
+		{
+			"name": "Icon",
+			"path": "../j/photogalary/Icon"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "Property360"
+	}
+}

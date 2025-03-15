@@ -3,230 +3,619 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTG Properties Navbar</title>
-    <style>
-   
-    </style>
+    <title>Responsive Header with Hero Slider</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: white;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .contact {
+            text-align: right;
+            color: black;
+        }
+        .nav {
+            background: black;
+            padding: 10px;
+        }
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: right;
+            position: relative;
+        }
+        .nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+        .nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            display: block;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+        }
+        .dropdown a {
+            color: black;
+            padding: 10px;
+            display: block;
+        }
+        .nav ul li:hover .dropdown, .nav ul li:focus-within .dropdown {
+            display: block;
+        }
+        .menu-toggle {
+            display: none;
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                display: none;
+                text-align: center;
+            }
+            .nav ul.show {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .dropdown {
+                position: static;
+            }
+        }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+        .hero .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .hero .slide.active {
+            opacity: 1;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        /* Ensure the nav bar and dropdown are above the hero section */
+.nav {
+    position: relative;
+    z-index: 1000; /* Higher than hero section */
+}
+
+.nav ul li {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1001; /* Higher than hero section */
+    color: white;
+}
+
+.dropdown a {
+    color: black;
+    padding: 10px;
+    display: block;
+}
+
+.nav ul li:hover .dropdown,
+.nav ul li:focus-within .dropdown {
+    display: block;
+}
+
+/* Fix hero section so it doesn't block dropdown */
+.hero {
+    height: 600Px;
+    position: relative;
+    z-index: 1; /* Lower than nav */
+}
+
+
+
+
+
+
+
+
+
+
+body {
+                margin: 0;
+                padding: 0;
+                background-color: #111;
+                color: white;
+                font-family: 'Poppins', sans-serif;
+            }
+            .fotter-container{
+                background-color: #111;
+            }
+            .footer {
+                /* background: linear-gradient(135deg, #1e1e1e, #333); */
+                padding: 50px 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                text-align: left;
+                background-color: black;
+            }
+            .footer div {
+                flex: 1;
+                min-width: 250px;
+                margin: 10px;
+            }
+            .footer h2, .footer h3 {
+                margin-bottom: 15px;
+                color: #ffffff;
+            }
+            .footer p, .footer a {
+                color: #ccc;
+                text-decoration: none;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            .footer a:hover {
+                color: #ffffff;
+            }
+            .social-icons a {
+                margin-right: 10px;
+                display: inline-block;
+            }
+            .social-icons img {
+                width: 30px;
+                transition: transform 0.3s ease;
+            }
+            .social-icons img:hover {
+                transform: scale(1.2);
+            }
+            .divider {
+                border-top: 1px solid #444;
+                width: 90%;
+                margin: 30px auto;
+                background-color: #111;
+            }
+            .copyright {
+                text-align: center;
+                padding: 10px;
+                font-size: 12px;
+                color: #777;
+            }
+            @media (max-width: 768px) {
+                .footer {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+
+
+
+
+.subtitle{
+    text-align: center;
+    color: black;
+}
+
+.title{
+    text-align: center;
+    color: black;
+}
+
+/* 
+/* General styles */
+/* body { */
+    /* font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+  */
+
+/* Section container */
+
+.about {
+    padding: 40px 20px;
+    color: #111;
+}
+
+/* Subtitle and title */
+.subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.title {
+    color: #2a2a2a;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* Info container */
+.info-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Info boxes */
+.info-box {
+    border: 2px solid #007bff;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.info-box:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.info-box img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+body{
+    background-color: white;
+}
+/* Text styles */
+.label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 20px;
+    margin: 5px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+.photo1{
+        width: 430px;
+        margin: 15px;
+       }
+       .photo2{
+        width: 430px;
+        margin: 15px;
+        
+       }
+       .photo3{
+        width: 300px;
+        height: 244px;
+        margin: 15px;
+       }
+       .photo4{
+        width: 300px;
+        height: 244px;
+        margin: 15px;
+       }
+       .photo4{
+        width: 300px;
+        height: 244px;
+        margin: 15px;
+       }
+       .photo5{
+        width: 430px;
+        height: 244px;
+        margin: 15px;
+       }
+       .photo6{
+        width: 430px;
+        height: 244px;
+        margin: 15px;
+       }
+       .photo7{
+        width: 430px;
+        height: 244px;
+        margin: 15px;
+       }
+       .photo8{
+        width: 430px;
+        height: 244px;
+        margin: 15px;
+       }
+       .photo9{
+        width: 300px;
+        height: 244px;
+        margin: 15px;
+       }
+       .first{
+        display: flex;
+       }
+       .second{
+        display: flex;
+
+       }
+       .third{
+        display: flex;
+       }
+       .grid-galarry{
+        margin-top: 70px;
+        margin-bottom: 70px;
+
+       }
+       .grid-galarry h1{
+        color: black;
+        text-align: center;
+       }
+    </style>
 </head>
-<body onload="slider()">
-
-
-<header>
+<body>
     <div class="header">
         <div class="logo">
-            <img src="Images/Property360Logo BIG.png"BTG Properties Logo">
+            <img src="Images/Property360Logo BIG.png" alt="Logo" height="40">
         </div>
-        <div class="contact-info">
+        <div class="contact">
             <p>+8801912-825969</p>
-            <p>+880122-711161</p>
+            <p>+8801622-711161</p>
             <p>btsproperty360@gmail.com</p>
         </div>
     </div>
-
-    <div class="navbar">
-        <!-- <ul class="nav-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Ongoing Project</a>
-                <dev class="togglemenu">
-                    <ul>
-                        <li><a href="#">Mohammadpur</a></li>
-                        <li><a href="#">Demra</a></li>
-                        <li><a href="#">Mirpur </a></li>
-                        <li><a href="#">Boshundhora R/A</a></li>
-                    </ul>
-                </dev>
-            </li>
-            <li><a href="#">Upcoming Project</a></li>
-            <li><a href="#">Complete Project</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">About Us</a></li>
-        </ul> -->
-
-        <ul class="nav-menu">
-            <li><a href="#">Home</a></li>
-            <li class="dropdown">
+    <button class="menu-toggle">Menu</button>
+    <nav class="nav">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li>
                 <a href="#">Ongoing Project</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Mohammadpur</a></li>
-                    <li><a href="#">Demra</a></li>
-                    <li><a href="#">Mirpur</a></li>
-                    <li><a href="#">Boshundhora R/A</a></li>
-                </ul>
+                <div class="dropdown">
+                    
+                    <a href="Mohammadpur.html">Mohammadpur </a>
+                    <a href="demra.html">Demra </a>
+                    <a href="boshundhora.html">Bashundhara  </a>
+                    <a href="Mirpur.html">Mirpur  </a>
+                    
+                </div>
             </li>
-            <li class="dropdown">
+            <li>
                 <a href="#">Upcoming Project</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Mohammadpur</a></li>
-                    <li><a href="#">Demra</a></li>
-                    <li><a href="#">Mirpur</a></li>
-                    <li><a href="#">Boshundhora R/A</a></li>
-                </ul>
+                <div class="dropdown">
+                    <a href="Mohammadpur.html">Mohammadpur </a>
+                    <a href="demra.html">Demra </a>
+                    <a href="boshundhora.html">Bashundhara  </a>
+                    <a href="Mirpur.html">Mirpur  </a>
+                </div>
             </li>
-            <li class="dropdown">
+            <li>
                 <a href="#">Complete Project</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Mohammadpur</a></li>
-                    <li><a href="#">Demra</a></li>
-                    <li><a href="#">Mirpur</a></li>
-                    <li><a href="#">Boshundhora R/A</a></li>
-                </ul>
+                <div class="dropdown">
+                    <a href="Mohammadpur.html">Mohammadpur </a>
+                    <a href="demra.html">Demra </a>
+                    <a href="boshundhora.html">Bashundhara  </a>
+                    <a href="Mirpur.html">Mirpur  </a>
+                </div>
             </li>
-            <li class="dropdown">
-                <a href="#">Contect Us</a>
-                <!-- <ul class="dropdown-menu">
-                    <li><a href="#">Mohammadpur</a></li>
-                    <li><a href="#">Demra</a></li>
-                    <li><a href="#">Mirpur</a></li>
-                    <li><a href="#">Boshundhora R/A</a></li>
-                </ul> -->
-            </li>
-            <li class="dropdown">
-                <a href="#">About Us</a>
-
-            </li>
-            <!-- <li><a href="#">Upcoming Project</a></li>
-            <li><a href="#">Complete Project</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">About Us</a></li> -->
+            <li><a href="Contect.html">Contact Us</a></li>
+            <li><a href="About.html">About Us</a></li>
         </ul>
-
-    </div>
-</header>
-<div class="banner" >
-<!-- <div class="herocontainner" class="slider">
+    </nav>
     
-    <img class="hero-img" src="Images/building1.png" id="slideImg">
-</div>
- -->
- <div class="hero">
-    <img id="slideImg" src="Images/building1.png" alt="Slideshow Image">
-    <div class="hero-text">
-        Building Your Dreams, One Property at a Time. <br>
-        Welcome to Property360
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="slide active" style="background-image: url('Images/building1.png');"></div>
+        <div class="slide" style="background-image: url('Images/building2.png');"></div>
+        <div class="slide" style="background-image: url('Images/building3.png');"></div>
+        <div class="hero-text" id="hero-text">Welcome to Our Website</div>
     </div>
+
+
+
+
+
+
+
+
+    <section class="about">
+        <p class="subtitle">All you need to know</p>
+        <h2 class="title">About Property360</h2>
+        <div class="info-container">
+            <div class="info-box">
+                <!-- <img src="icons/since.png" alt="Since"> -->
+                <p class="label">Since</p>
+                <h3>1950</h3>
+            </div>
+            <div class="info-box">
+                <!-- <img src="icons/units.png" alt="Units"> -->
+                <p class="label">Units</p>
+                <h3>31</h3>
+            </div>
+            <div class="info-box">
+                <!-- <img src="icons/employees.png" alt="Employees"> -->
+                <p class="label">Employees</p>
+                <h3>35053</h3>
+            </div>
+            <div class="info-box">
+                <!-- <img src="icons/achievements.png" alt="National Achievements"> -->
+                <p class="label">National Achievements</p>
+                <h3>25</h3>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="grid-galarry">
+        <h1>Our Future Work</h1>
+        <div class="first">
+            <img src="photogalary/01.png" alt="" class="photo1">
+            <img src="photogalary/02.png" alt="" class="photo2">
+            <img src="photogalary/03.png" alt="" class="photo3">
+        </div>
+        <div class=" second">
+            <img src="photogalary/06.png" alt="" class="photo4">
+            <img src="photogalary/04.png" alt="" class="photo5">
+            <img src="photogalary/05.png" alt="" class="photo6">
+            
+        </div>
+        <div class="third">
+            <img src="photogalary/07.png" alt="" class="photo7">
+            <img src="photogalary/08.png" alt="" class="photo8">
+            <img src="photogalary/09.png" alt="" class="photo9">
+        </div>
+    </section>
+
+
+
+
+<div class="video">
+    <video controls src="video/2835998-uhd_3840_2160_24fps.mp4"></video>
 </div>
 
-<div id="overlay">
-
-</div>
 
 
-</div>
+<section class="jurney-of-our-work">
+    <section class="journey">
+        <h2 >Our Journey</h2>
+        <p class="subtitle">We started out with a single promise to our customers – quality.</p>
+        <div class="journey-container">
+            <div class="journey-box">
+                <img src="Jurney/jurny01.png" alt="Building Maintenance">
+                <h3>Building Maintenance</h3>
+                <p>Upon completion of building construction, Bay oversees all aspects of building management for 10 years. Our Facilities Management team constitutes of professional...</p>
+                <a href="#">Read More →</a>
+            </div>
+            <div class="journey-box">
+                <img src="Jurney/Jurney02.png" alt="Bay Turns 29">
+                <h3>Bay Turns 29 and Counting</h3>
+                <p>Bay started out with a single promise to our customers – quality. Unwavering from that pledge, our buildings are a testament to the values of hard work, dedication...</p>
+                <a href="#">Read More →</a>
+            </div>
+            <div class="journey-box">
+                <img src="Jurney/Jurney03.png" alt="In-house Testing Lab">
+                <h3>Bay’s In-house Testing Lab</h3>
+                <p>The Bay Research & Testing Laboratory is a symbol of our commitment to quality. BRTL carries out various tests on our building materials, including: Concrete crushing...</p>
+                <a href="#">Read More →</a>
+            </div>
+        </div>
+    </section>
+</section>
 
 
-<script>
-//     var slideImg = document.getElementById("slideImg");
-//     var images = new Array (
-//         "Images/building1.png",
-//         "Images/building2.png",
-//         "Images/building3.png",
-//         "Images/building4.png"
-        
-//  ) ;
+<section class="fotter-container">
 
 
-// var len = images.length;
-// var i=0;
-// function slider(){
-//     if(i>len-1){
-//         i=0;
-//     }
+    <footer>
+        <div class="footer">
+            <div>
+                <h2>Property360</h2>
+                <p>Shaping the Future of Luxury Living with Innovation & Excellence.</p>
+                <p>We specialize in high-end real estate projects, delivering precision, innovation, and excellence in every development.</p>
+            </div>
+            <div class="quick-link">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a><br>
+                <a href="#">About Us</a><br>
+                <a href="#">Projects</a><br>
+                <a href="#">Contact</a>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>📍 Dhaka, Bangladesh</p>
+                <p>📞 <a href="tel:+8801912-825969">+8801912-825969</a></p>
+                <p>📧 <a href="mailto:btsproperty360@gmail.com">btsproperty360@gmail.com</a></p>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="copyright">© 2025 Property360. All Rights Reserved.</div>
+    </footer>
 
-//     slideImg.src = images[i];
-//     i++;
-//     setTimeout('slider()',7000);
-// }
 
-        var slideImg = document.getElementById("slideImg");
-        var images = [
-            "Images/building1.png",
-            "Images/building2.png",
-            "Images/building3.png",
-            "Images/building4.png"
+</section>
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function() {
+            document.querySelector(".nav ul").classList.toggle("show");
+        });
+
+        // Hero Slider Functionality
+        const slides = document.querySelectorAll(".hero .slide");
+        const heroText = document.getElementById("hero-text");
+        const texts = [
+            "Welcome to Our Website",
+            "Discover Our Projects",
+            "Your Dream Home Awaits"
         ];
-
-        var len = images.length;
-        var i = 0;
-
-        function slider() {
-            slideImg.style.opacity = 0; // Start fade-out
-
-            setTimeout(() => {
-                slideImg.src = images[i];
-                slideImg.style.opacity = 1; // Fade-in effect
-                i = (i + 1) % len; // Loop images
-            }, 500); // Delay to match fade-out time
-
-            setTimeout(slider, 7000); // Call function every 7 seconds
+        let currentIndex = 0;
+        
+        function changeSlide() {
+            slides[currentIndex].classList.remove("active");
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].classList.add("active");
+            heroText.textContent = texts[currentIndex];
         }
-    
-</script>
-
-
-
-
-
-
-
-
-
-<main>
-    <section>
-        <h1>All you need to know about <br> Property360</h1>
-       <!-- Statistic Boxes Container -->
-       <div class="stats-container">
-        <div class="stat-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/8065/8065740.png" alt="Building">
-            <div class="stat-title">Since</div>
-            <div class="stat-value">1950</div>
-        </div>
-
-        <div class="stat-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/2907/2907769.png" alt="Units">
-            <div class="stat-title">Units</div>
-            <div class="stat-value">31</div>
-        </div>
-
-        <div class="stat-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/992/992701.png" alt="Employees">
-            <div class="stat-title">Employees</div>
-            <div class="stat-value">35053</div>
-        </div>
-
-        <div class="stat-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/2278/2278051.png" alt="Achievements">
-            <div class="stat-title"> Achievements</div>
-            <div class="stat-value">25</div>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-<section class="galary">
-<div class="grid-gallery">
-    <div>
-        <img src="Images/building2.png" alt="">
-    </div>
-</div>
-</section>
-
-
-
-
-</main>
-
-
-
-<!-- 
-<footer class="footer">
-
-</footer> -->
+        
+        setInterval(changeSlide, 3000);
+    </script>
 
 
 </body>
-
 </html>

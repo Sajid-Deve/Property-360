@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px; /* Space between items */
+}
+
+.item {
+    background: linear-gradient(to bottom, #345, #012);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+/* Making specific items wider */
+.item:nth-child(2),
+.item:nth-child(5),
+.item:nth-child(8) {
+    grid-column: span 2; /* Makes these items twice as wide */
+}
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
+.item {
+    background-size: cover;
+    background-position: center;
+}
+/* Footer Styling */
+footer {
+    background: #000;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+/* Social Media */
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: orange;
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (
+
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="box"><img src="01.png" alt="Image 1"></div>
+        <div class="box"><img src="02.png" alt="Image 2"></div>
+        <div class="box"><img src="03.png" alt="Image 3"></div>
+        <div class="box"><img src="04.png" alt="Image 4"></div>
+        <div class="box"><img src="05.png" alt="Image 5"></div>
+        <div class="box"><img src="06.png" alt="Image 6"></div>
+        <div class="box"><img src="07.png" alt="Image 7"></div>
+        <div class="box"><img src="08.png" alt="Image 8"></div>
+        <div class="box"><img src="09.png" alt="Image 9"></div>
+    </div>
+    
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Property360</h2>
+                <p>Property360 is a leader in high-end real estate, offering innovative planning and design solutions. Each project is executed with precision and detail by our dynamic design team.</p>
+                <a href="#" class="footer-link">KNOW MORE</a>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>+88 02 5505 1803</p>
+                <p><a href="mailto:info@property360.com">info@property360.com</a></p>
+                <p>Property360 HQ<br>NE (N) 12, North Avenue<br>Gulshan 2, Dhaka 1212, Bangladesh</p>
+                <a href="#" class="footer-link">GET DIRECTIONS</a>
+            </div>
+        </div>
+    
+        <div class="social-media">
+            <p>Connect with us</p>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2024 Property360. All rights reserved.</p>
+            <a href="#">Privacy Policy</a>
+        </div>
+    
+        <a href="#" class="back-to-top">↑</a>
+    </footer>
+    
+</body>
+</html>
