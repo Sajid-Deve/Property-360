@@ -1,0 +1,696 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Contact Form</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e4e4e4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap-reverse;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .image-box {
+      flex: 1;
+      max-width: 500px;
+      animation: slideInRight 1s ease;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .contact-form {
+      background: linear-gradient(145deg, #e0e0e0, #ffffff);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      max-width: 360px;
+      width: 100%;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    @keyframes slideUp {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .contact-form h2 {
+      margin-bottom: 20px;
+      color: #1e272e;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #333333;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      background-color: #f0f0f0;
+      box-shadow: inset 2px 2px 5px #bebebe, inset -2px -2px 5px #ffffff;
+      transition: box-shadow 0.3s, transform 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      box-shadow: inset 1px 1px 3px #bebebe, inset -1px -1px 3px #ffffff;
+      transform: scale(1.02);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+
+
+
+
+
+   <div class="container">
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form action="https://api.web3forms.com/submit" method="POST" method="post">
+        <input type="hidden" name="access_key" value="0d0af6ad-54a0-4809-8e51-2a3a4237e3e2">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+    <div class="image-box">
+      <img src="Images/Contect.png" alt="Contact Illustration">
+    </div>
+  </div> 
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Contact Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #D3D3D3;
+      animation: fadeIn 1s ease-in;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      background-color: #b0b0b0;
+      color: #2c3e50;
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    } */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 60px;
+      padding: 30px;
+      flex-grow: 1;
+    }
+
+    .image-box {
+      flex: 1.5;
+      max-width: 600px;
+      margin: 80px;
+      animation: slideInRight 1s ease;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .contact-form {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(242, 242, 242, 0.95));
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      max-width: 350px;
+      width: 100%;
+      animation: slideUp 0.8s ease-out;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes slideUp {
+      0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .contact-form h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #34495e;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      background-color: #f4f4f4;
+      box-shadow: inset 1px 1px 4px #ccc, inset -1px -1px 4px #fff;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #764ba2;
+      transform: scale(1.01);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px), (max-height: 600px) {
+      .container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .image-box {
+        display: none;
+      }
+
+      .contact-form {
+        background: rgba(255, 255, 255, 0.95);
+        margin: auto;
+        max-width: 90%;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.contact {
+    text-align: right;
+    color: black;
+}
+.nav {
+    background: black;
+    padding: 10px;
+}
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    position: relative;
+}
+.nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+.dropdown a {
+    color: black;
+    padding: 10px;
+    display: block;
+}
+.nav ul li:hover .dropdown, .nav ul li:focus-within .dropdown {
+    display: block;
+}
+.menu-toggle {
+    display: none;
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        display: none;
+        text-align: center;
+    }
+    .nav ul.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .dropdown {
+        position: static;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.fotter-container{
+    background-color: #111;
+}
+.footer {
+    /* background: linear-gradient(135deg, #1e1e1e, #333); */
+    padding: 50px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    background-color: black;
+}
+.footer div {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+.footer h2, .footer h3 {
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+.footer p, .footer a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.footer a:hover {
+    color: #ffffff;
+}
+.social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+}
+.social-icons img {
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+.divider {
+    border-top: 1px solid #444;
+    width: 90%;
+    margin: 30px auto;
+    background-color: #111;
+}
+.copyright {
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    color: #777;
+}
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.FOTTER_CONTAINER{
+    background-color: #111;
+}
+
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+
+
+
+
+
+    <div class="header">
+        <div class="logo">
+            <img src="Images/Property360Logo BIG.png" alt="Logo" height="40">
+        </div>
+        <div class="contact">
+            <p>+8801912-825969</p>
+            <p>+8801622-711161</p>
+            <p>btsproperty360@gmail.com</p>
+        </div>
+    </div>
+    <nav class="nav">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li>
+                <a href="#">Ongoing Project</a>
+                <div class="dropdown">
+                    
+                    <a href="ongoing_Mohammadpur.html">Mohammadpur </a>
+                    <a href="demra.html">Demra </a>
+                    <a href="boshundhora.html">Bashundhara  </a>
+                    <a href="Mirpur.html">Mirpur  </a>
+                    
+                </div>
+            </li>
+            <li>
+                <a href="#">Upcoming Project</a>
+                <div class="dropdown">
+                    <a href="Up_coming_muhammadpur.html">Mohammadpur </a>
+                    <a href="demra.html">Demra </a>
+                    <a href="boshundhora.html">Bashundhara  </a>
+                    <a href="Mirpur.html">Mirpur  </a>
+                </div>
+            </li>
+            <li>
+                <a href="#">Complete Project</a>
+                <div class="dropdown">
+                    <a href="complete_Muhammadpur.html">Mohammadpur </a>
+                    <a href="demra.html">Demra </a>
+                    <a href="boshundhora.html">Bashundhara  </a>
+                    <a href="Mirpur.html">Mirpur  </a>
+                </div>
+            </li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+  </header>
+  <div class="container">
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form action="https://api.web3forms.com/submit" method="POST" method="post">
+        <input type="hidden" name="access_key" value="0d0af6ad-54a0-4809-8e51-2a3a4237e3e2">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+    <div class="image-box">
+      <img src="Images/Contect.png" alt="Contact Illustration">
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<div class="FOTTER_CONTAINER">
+
+    <footer>
+        <div class="footer">
+            <div>
+                <h2>Property360</h2>
+                <p>Shaping the Future of Luxury Living with Innovation & Excellence.</p>
+                <p>We specialize in high-end real estate projects, delivering precision, innovation, and excellence in every development.</p>
+            </div>
+            <div class="quick-link">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a><br>
+                <a href="#">About Us</a><br>
+                <a href="#">Projects</a><br>
+                <a href="#">Contact</a>
+            </div>
+            <div>
+                <h3>Contact Us</h3>
+                <p>📍 Dhaka, Bangladesh</p>
+                <p>📞 <a href="tel:+8801912-825969">+8801912-825969</a></p>
+                <p>📧 <a href="mailto:btsproperty360@gmail.com">btsproperty360@gmail.com</a></p>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="Images/instagram_1400829.png" alt="Instagram"></a>
+                    <a href="#"><img src="Images/Facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="Images/play_4571826.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="copyright">© 2025 Property360. All Rights Reserved.</div>
+    </footer>
+</div>
+</body>
+</html>
